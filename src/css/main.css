@@ -1,0 +1,25 @@
+body {
+    font-size: 1rem;
+}
+
+.operation {
+    font-size: 1.5rem;
+    text-align: right;
+    border-left: 2px solid brown;
+}
+.mui-row .operation:first-child {
+    border: none;
+}
+/* .operation > div:first-child {
+    padding-left: 10px;
+} */
+.operation span {
+    float: left;
+}
+.operation input {
+    width: 50px !important;
+    text-align: right;
+}
+input.success {
+    background-color: lightgreen;
+}
