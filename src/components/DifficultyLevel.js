@@ -1,12 +1,17 @@
+import React from 'react';
+
 const DifficultyLevel = (props) => {
     const setLimit = (e) => {
-        props.setLimit(eval(e.target.getAttribute("min")), eval(e.target.getAttribute("max")));
+        const evalNum = (tgt) => {
+            return parseInt(e.target.getAttribute(tgt))
+        }
+        props.setLimit(evalNum("min"), evalNum("max"), evalNum("multimin"), evalNum("multimax"));
     }
     return (
-        <div>Difficulty Levels: &nbsp;
-            <button href="#" min={10} max={199} onClick={setLimit}>1</button> 
-             &nbsp;  <button href="#" min={100} max={299} onClick={setLimit}>2</button> 
-             &nbsp;  <button href="#" min={150} max={399} onClick={setLimit}>3</button>
+        <div><br />Difficulty Levels: &nbsp;
+            <button href="#" min={10} max={199} multimin={3} multimax={12} onClick={setLimit}>1</button> 
+             &nbsp;  <button href="#" min={100} max={299} multimin={6} multimax={13} onClick={setLimit}>2</button> 
+             &nbsp;  <button href="#" min={150} max={399} multimin={7} multimax={15} onClick={setLimit}>3</button>
         </div>
     )
 }
