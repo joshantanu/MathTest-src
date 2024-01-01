@@ -5,19 +5,20 @@ import { useState } from 'react';
 import Footer from './components/Footer';
 import DifficultyLevel from './components/DifficultyLevel';
 import React from 'react';
+import ProblemTable from './components/ProblemTable';
 
 function App() {
-  const [addSubLimit, setaddSubLimit] = useState({min:10,max:100});
-  const [multiLimit, setmultiLimit] = useState({min:2,max:12});
+  const [addSubLimit, setaddSubLimit] = useState({ min: 10, max: 100 });
+  const [multiLimit, setmultiLimit] = useState({ min: 2, max: 12 });
   //const maxNum = useRef();
-  const setLimit = (min,max,multiMin,multiMax) => {
-    setaddSubLimit({min,max})
-    setmultiLimit({min:multiMin,max:multiMax})
+  const setLimit = (min, max, multiMin, multiMax) => {
+    setaddSubLimit({ min, max })
+    setmultiLimit({ min: multiMin, max: multiMax })
   }
   return (
     <div className="mui-container-fluid">
       <Header />
-      {console.log(addSubLimit.min,addSubLimit.max)}
+      {console.log(addSubLimit.min, addSubLimit.max)}
       <div className="mui-container-fluid">
         {/* Set Limit <input type="tel" ref={maxNum} size="4" maxLength="4" /> <button onClick={setLimit}>Go</button> */}
         <DifficultyLevel setLimit={setLimit} />
@@ -35,12 +36,19 @@ function App() {
           ))}
         </div><br />
         <div className="mui-divider"></div>
-        <h3>Multiplication</h3>
+        {/* <h3>Multiplication</h3>
         <div className="mui-row">
           {console.log(multiLimit.min, multiLimit.max)}
           {[...Array(4)].map(() => (
             <Problem operator="X" min={multiLimit.min} max={multiLimit.max} />
           ))}
+        </div><br /> */}
+        <h3>Tables</h3>
+        <div className="mui-row">
+          {console.log(multiLimit.min, multiLimit.max)}
+
+          <ProblemTable operator="X" min={multiLimit.min} max={multiLimit.max} />
+
         </div><br />
       </div>
       <Footer />
