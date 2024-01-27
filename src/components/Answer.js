@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 const Answer = (props) => {
     const [inputAnswer, setInputAnswer] = useState(0);
+    //inputAnswer === props.answer.toString() && props.setAnwer()
+    const answerChange = (e) => {
+        setInputAnswer(e.target.value);
+        e.target.classList.remove("error");
+    }
     return (
         <input type="tel" size="3"
             placeholder="="
-            onChange={(e) => setInputAnswer(e.target.value)}
-            className={inputAnswer === props.answer.toString() && "success"}
+            className="answerField"
+            onChange={answerChange}
+            data-answer={inputAnswer === props.answer.toString() && "true"}
         />
     )
 };

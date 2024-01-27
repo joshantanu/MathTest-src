@@ -5,7 +5,7 @@ const Header = () => (
         <table width="100%">
             <tr>
                 <td className="mui--appbar-height">MATHS TEST</td>
-                <td className="mui--appbar-height aline-right">3rd Grade</td>
+                <td className="mui--appbar-height aline-right"></td>
             </tr>
         </table>
     </div>
