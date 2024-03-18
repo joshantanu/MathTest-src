@@ -14,6 +14,7 @@ function App() {
   let totalQ = useRef(0);
   //const [viewResult, setViewResults] = useState(false);
   let errors = useRef(0);
+  const [scores, setScores] = useState({score:0,Qs:0})
 
   const showResult = () => {
     errors.current = 0;
@@ -29,6 +30,7 @@ function App() {
     });
     if(errors){
       console.log(errors,totalQ);
+      setScores({score:totalQ.current-errors.current, Qs: totalQ.current})
       resultPanel.current.style.display="block";
     }
   }
@@ -44,7 +46,7 @@ function App() {
       <div className="mui-container-fluid">
         {/* Set Limit <input type="tel" ref={maxNum} size="4" maxLength="4" /> <button onClick={setLimit}>Go</button> */}
         {/* <DifficultyLevel setLimit={setLimit} /> */}
-        <div class="mui-panel" style={{display:'none'}} ref={resultPanel}>Your Score: {} / {}</div>
+        <div class="mui-panel" style={{display:'none'}} ref={resultPanel}>Your Score: {scores.score} / {scores.Qs}</div>
         <h3>Addition</h3>
         <div className="mui-row">
           {[...Array(4)].map(() => (
