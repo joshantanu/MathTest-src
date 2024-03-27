@@ -16,12 +16,12 @@ const App = () => {
       const num2 = generateRandomNumber(1000, 9999);
       problems.push({ num1, num2, operator: '+', answer: num1 + num2 });
 
-      const num3 = generateRandomNumber(1000, 9999);
-      const num4 = generateRandomNumber(1000, 9999);
+      const num3 = generateRandomNumber(4000, 9999);
+      const num4 = generateRandomNumber(1000, num3);
       problems.push({ num1: num3, num2: num4, operator: '-', answer: num3 - num4 });
 
       const num5 = generateRandomNumber(6, 15);
-      const num6 = generateRandomNumber(6, 15);
+      const num6 = generateRandomNumber(3, 9);
       problems.push({ num1: num5, num2: num6, operator: 'x', answer: num5 * num6 });
     }
 
