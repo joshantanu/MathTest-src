@@ -59,5 +59,6 @@
 input {
   width: 98%;
   text-align: right;
+  border: 2px solid lightslategray;
   letter-spacing: inherit;
 }

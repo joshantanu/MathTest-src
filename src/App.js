@@ -12,15 +12,15 @@ const App = () => {
 
     const problems = [];
     for (let i = 0; i < 4; i++) {
-      const num1 = generateRandomNumber(1000, 9999);
-      const num2 = generateRandomNumber(1000, 9999);
+      const num1 = generateRandomNumber(10000, 999999);
+      const num2 = generateRandomNumber(10000, 999999);
       problems.push({ num1, num2, operator: '+', answer: num1 + num2 });
 
-      const num3 = generateRandomNumber(5000, 9999);
-      const num4 = generateRandomNumber(1000, 4000);
+      const num3 = generateRandomNumber(50000, 99999);
+      const num4 = generateRandomNumber(10000, 45000);
       problems.push({ num1: num3, num2: num4, operator: '-', answer: num3 - num4 });
 
-      const num5 = generateRandomNumber(6, 15);
+      const num5 = generateRandomNumber(6, 16);
       const num6 = generateRandomNumber(3, 9);
       problems.push({ num1: num5, num2: num6, operator: 'x', answer: num5 * num6 });
     }
@@ -86,6 +86,7 @@ const App = () => {
                 className={showResults && userAnswers[index] != problem.answer && 'incorrect'}
                 data-answer={problem.answer}
               />
+              <div className='mui--text-right mui--text-accent-secondary'>{showResults && problem.answer}</div>
             </div>
           ))}
         </div>
